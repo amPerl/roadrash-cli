@@ -1,0 +1,24 @@
+char skipped_header[48 + 8];
+
+typedef struct {
+  char kind[4];
+  int unkIndexMaybe;
+  int subEntryCount;
+  int runtime_unkNextEntryMaybe;
+} UnkContentEntry;
+
+typedef struct
+{
+  int kind;
+  int unk1;
+  int dataOffset;
+  int dataSize;
+  int runtime_unk4;
+  int runtime_unk5;
+  int runtime_unk6;
+  int runtime_unk7;
+} UnkContentSubEntry;
+
+
+UnkContentEntry rootEntry;
+UnkContentSubEntry subEntries[rootEntry.subEntryCount];
