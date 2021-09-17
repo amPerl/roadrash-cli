@@ -1,3 +1,4 @@
+# By t0m50n#9459 on Discord
 from struct import unpack
 import os
 

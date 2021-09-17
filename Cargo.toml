@@ -1,5 +1,5 @@
 [package]
-name = "roadrash"
+name = "roadrash-cli"
 version = "0.1.0"
 edition = "2018"
 authors = ["amPerl"]
@@ -13,3 +13,4 @@ license = "MIT"
 anyhow = "1.0.38"
 binrw = "0.5.0"
 clap = "3.0.0-beta.4"
+image = { version = "0.23.14", features = ["bmp"] }

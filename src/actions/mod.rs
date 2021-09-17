@@ -1,15 +1,27 @@
 use clap::Clap;
 
-mod extract_rsrc;
-pub use extract_rsrc::*;
+mod anim;
+mod rsrc;
 
 #[derive(Clap)]
-pub enum Action {
-    ExtractRsrc(ExtractRsrcOpts),
+pub enum FileTypeCommand {
+    #[clap(about = "Actions for RSRC-type resource files (CRS, CAR, RSC)")]
+    Rsrc {
+        #[clap(subcommand, about = "subcommand to run")]
+        cmd: rsrc::Command,
+    },
+    #[clap(about = "Actions for ANIM files (typically extracted from a RSRC)")]
+    Anim {
+        #[clap(subcommand, about = "subcommand to run")]
+        cmd: anim::Command,
+    },
 }
 
-pub fn process_action(action: Action) -> anyhow::Result<()> {
-    match action {
-        Action::ExtractRsrc(opts) => extract_rsrc(opts),
+impl FileTypeCommand {
+    pub fn process(self) -> anyhow::Result<()> {
+        match self {
+            FileTypeCommand::Rsrc { cmd } => cmd.process(),
+            FileTypeCommand::Anim { cmd } => cmd.process(),
+        }
     }
 }
