@@ -1,6 +1,7 @@
 use clap::Clap;
 
 mod anim;
+mod dat;
 mod rsrc;
 
 #[derive(Clap)]
@@ -15,6 +16,11 @@ pub enum FileTypeCommand {
         #[clap(subcommand, about = "subcommand to run")]
         cmd: anim::Command,
     },
+    #[clap(about = "Actions for DAT files")]
+    Dat {
+        #[clap(subcommand, about = "subcommand to run")]
+        cmd: dat::Command,
+    },
 }
 
 impl FileTypeCommand {
@@ -22,6 +28,7 @@ impl FileTypeCommand {
         match self {
             FileTypeCommand::Rsrc { cmd } => cmd.process(),
             FileTypeCommand::Anim { cmd } => cmd.process(),
+            FileTypeCommand::Dat { cmd } => cmd.process(),
         }
     }
 }

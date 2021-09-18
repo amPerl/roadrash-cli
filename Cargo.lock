@@ -45,9 +45,9 @@ checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
 
 [[package]]
 name = "binrw"
-version = "0.5.1"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1df9c144b44ff057659d44f733a62c95d7a1a0cff9b0f0ffea15bc6b9fd411d4"
+checksum = "4b0f3cc2adaa681a84668ad5e42b49116c510b001bba7e951001a5804eca2aa9"
 dependencies = [
  "array-init",
  "binrw_derive",
@@ -55,9 +55,9 @@ dependencies = [
 
 [[package]]
 name = "binrw_derive"
-version = "0.5.1"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "17d0468778c0c0f0b14892ae8af4bc7b37bda8a83239f50db3c29de094411020"
+checksum = "5fe45c260fcd0a35d65092c24a78449f28b61b626b826fbb30286020a66ff0c9"
 dependencies = [
  "proc-macro2",
  "quote",
