@@ -9,3 +9,6 @@ pub use anim::*;
 
 mod dat;
 pub use dat::*;
+
+mod fam;
+pub use fam::*;

@@ -2,6 +2,7 @@ use clap::Clap;
 
 mod anim;
 mod dat;
+mod fam;
 mod rsrc;
 
 #[derive(Clap)]
@@ -21,6 +22,11 @@ pub enum FileTypeCommand {
         #[clap(subcommand, about = "subcommand to run")]
         cmd: dat::Command,
     },
+    #[clap(about = "Actions for FAM files")]
+    Fam {
+        #[clap(subcommand, about = "subcommand to run")]
+        cmd: fam::Command,
+    },
 }
 
 impl FileTypeCommand {
@@ -29,6 +35,7 @@ impl FileTypeCommand {
             FileTypeCommand::Rsrc { cmd } => cmd.process(),
             FileTypeCommand::Anim { cmd } => cmd.process(),
             FileTypeCommand::Dat { cmd } => cmd.process(),
+            FileTypeCommand::Fam { cmd } => cmd.process(),
         }
     }
 }
